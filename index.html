@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🩸 ليبيـــا بنـــك الـــدم | سيف الإسلام</title>
+    <meta name="description" content="تطبيق بنك الدم الليبي - ربط المتبرعين بالمحتاجين">
+    <meta name="theme-color" content="#ff4757">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts" id="heartsContainer"></div>
+
+    <div class="container">
+        <!-- Hero Header -->
+        <header class="hero-header fade-in">
+            <h1 class="main-title">
+                🩸 ليبيـــا بنـــك الـــدم
+            </h1>
+            <p class="subtitle">
+                "وَمن أَحْيَاهَا فَكَأَنَّمَا أَحْيَا النَّاسَ جَمِيعًا" 
+                <br>نحو مجتمع واعي يتكافل بالحياة
+            </p>
+            
+            <!-- Developer Info -->
+            <div class="developer-card">
+                <h3>🦸‍♂️ البطل المطور</h3>
+                <h2>سيف الإسلام محمد علي بن عمر الزيداني</h2>
+                <p>📞 +21624809043</p>
+                <div style="margin-top: 15px;">
+                    <span class="badge">💖 حبيب القلب</span>
+                    <span class="badge">🌟 المطور الأسطوري</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Grid -->
+        <div class="nav-grid">
+            <div class="nav-card" onclick="showSection('donors')">
+                <div class="nav-icon">👥</div>
+                <h3 class="nav-title">أبطال التبرع</h3>
+                <p>أبطالنا الذين يمنحون الحياة</p>
+            </div>
+
+            <div class="nav-card" onclick="showSection('requests')">
+                <div class="nav-icon">📋</div>
+                <h3 class="nav-title">نداءات الحياة</h3>
+                <p>طلبات التبرع العاجلة</p>
+            </div>
+
+            <div class="nav-card" onclick="showSection('addDonor')">
+                <div class="nav-icon">⭐</div>
+                <h3 class="nav-title">انضم للأبطال</h3>
+                <p>كن بطلًا وأنقذ حياة</p>
+            </div>
+
+            <div class="nav-card" onclick="showSection('addRequest')">
+                <div class="nav-icon">🎯</div>
+                <h3 class="nav-title">طلب إنقاذ</h3>
+                <p>اطلب المساعدة للأحباء</p>
+            </div>
+        </div>
+
+        <!-- Donors Section -->
+        <div id="donors" class="section active">
+            <h2 class="section-title">👑 أبطالنا المتبرعون</h2>
+            <div id="donorsList" class="form-grid">
+                <!-- Donors will appear here -->
+            </div>
+        </div>
+
+        <!-- Requests Section -->
+        <div id="requests" class="section">
+            <h2 class="section-title">🆘 نداءات الحياة</h2>
+            <div id="requestsList" class="form-grid">
+                <!-- Requests will appear here -->
+            </div>
+        </div>
+
+        <!-- Add Donor Section -->
+        <div id="addDonor" class="section">
+            <h2 class="section-title">⭐ انضم لفرسان الحياة</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <input type="text" class="form-input" id="donorName" placeholder="🦸 اسم البطل">
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-input" id="donorPhone" placeholder="📞 رقم التواصل">
+                </div>
+                <div class="form-group">
+                    <select class="form-input" id="donorCity">
+                        <option value="">🏙️ اختر مدينة البطل</option>
+                        <option value="طرابلس">🏛️ طرابلس</option>
+                        <option value="بنغازي">🌊 بنغازي</option>
+                        <option value="سبها">🏜️ سبها</option>
+                        <option value="مصراتة">⚓ مصراتة</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-input" id="donorBloodType">
+                        <option value="">🩸 فصيلة بطل الحياة</option>
+                        <option value="A+">A+ 🦸</option>
+                        <option value="A-">A- 🦸</option>
+                        <option value="B+">B+ 🦸</option>
+                        <option value="B-">B- 🦸</option>
+                        <option value="AB+">AB+ 🦸‍♂️</option>
+                        <option value="AB-">AB- 🦸‍♂️</option>
+                        <option value="O+">O+ 🦸‍♀️</option>
+                        <option value="O-">O- 🦸‍♀️</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn-magic" onclick="addDonor()">
+                🚀 انضم لفرسان الحياة
+            </button>
+        </div>
+
+        <!-- Add Request Section -->
+        <div id="addRequest" class="section">
+            <h2 class="section-title">🆘 أطلق نداء الحياة</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <input type="text" class="form-input" id="patientName" placeholder="👤 اسم المحتاج">
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-input" id="patientPhone" placeholder="📞 رقم الطوارئ">
+                </div>
+                <div class="form-group">
+                    <select class="form-input" id="requestCity">
+                        <option value="">🏙️ مدينة المحتاج</option>
+                        <option value="طرابلس">🏛️ طرابلس</option>
+                        <option value="بنغازي">🌊 بنغازي</option>
+                        <option value="سبها">🏜️ سبها</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-input" id="requestBloodType">
+                        <option value="">🩸 الفصيلة المطلوبة</option>
+                        <option value="A+">A+ 💉</option>
+                        <option value="A-">A- 💉</option>
+                        <option value="B+">B+ 💉</option>
+                        <option value="B-">B- 💉</option>
+                        <option value="AB+">AB+ 💊</option>
+                        <option value="AB-">AB- 💊</option>
+                        <option value="O+">O+ 🩹</option>
+                        <option value="O-">O- 🩹</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-input" id="hospital" placeholder="🏥 المستشفى أو العنوان">
+                </div>
+            </div>
+            <button class="btn-magic" onclick="addRequest()">
+                🎯 أطلق نداء الحياة
+            </button>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+                                                           </html>
